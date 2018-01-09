@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationEntity", "AndersonNotificationEntity\AndersonNotificationEntity.csproj", "{F9ABC01E-F0F1-45E5-BF24-4004BFD0FA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationContext", "AndersonNotificationContext\AndersonNotificationContext.csproj", "{992347A3-FD25-4761-A2A1-9519B616D51B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationData", "AndersonNotificationData\AndersonNotificationData.csproj", "{A1E870C6-5A70-4D52-93D8-2C00F719C5E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationModel", "AndersonNotificationModel\AndersonNotificationModel.csproj", "{25DD0BEC-4174-45D3-8248-2771C772B9C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationFunction", "AndersonNotificationFunction\AndersonNotificationFunction.csproj", "{0717879A-DC84-4883-A06A-7FD7B55A7639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationWeb", "AndersonNotificationWeb\AndersonNotificationWeb.csproj", "{7DA40673-BB57-432F-906D-C4B8295EFEE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9ABC01E-F0F1-45E5-BF24-4004BFD0FA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9ABC01E-F0F1-45E5-BF24-4004BFD0FA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9ABC01E-F0F1-45E5-BF24-4004BFD0FA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9ABC01E-F0F1-45E5-BF24-4004BFD0FA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992347A3-FD25-4761-A2A1-9519B616D51B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992347A3-FD25-4761-A2A1-9519B616D51B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992347A3-FD25-4761-A2A1-9519B616D51B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992347A3-FD25-4761-A2A1-9519B616D51B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E870C6-5A70-4D52-93D8-2C00F719C5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E870C6-5A70-4D52-93D8-2C00F719C5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E870C6-5A70-4D52-93D8-2C00F719C5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E870C6-5A70-4D52-93D8-2C00F719C5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25DD0BEC-4174-45D3-8248-2771C772B9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25DD0BEC-4174-45D3-8248-2771C772B9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25DD0BEC-4174-45D3-8248-2771C772B9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25DD0BEC-4174-45D3-8248-2771C772B9C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA40673-BB57-432F-906D-C4B8295EFEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA40673-BB57-432F-906D-C4B8295EFEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA40673-BB57-432F-906D-C4B8295EFEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA40673-BB57-432F-906D-C4B8295EFEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03FBBB63-147E-4A7F-A5C6-CE8D8503E8AA}
+	EndGlobalSection
+EndGlobal
