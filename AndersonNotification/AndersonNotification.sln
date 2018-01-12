@@ -1,7 +1,6 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationEntity", "AndersonNotificationEntity\AndersonNotificationEntity.csproj", "{F9ABC01E-F0F1-45E5-BF24-4004BFD0FA97}"
 EndProject
@@ -12,8 +11,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationModel", "AndersonNotificationModel\AndersonNotificationModel.csproj", "{25DD0BEC-4174-45D3-8248-2771C772B9C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationFunction", "AndersonNotificationFunction\AndersonNotificationFunction.csproj", "{0717879A-DC84-4883-A06A-7FD7B55A7639}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationWebApi", "AndersonNotificationWebApi\AndersonNotificationWebApi.csproj", "{58879A32-F2B9-4351-8C16-7DA84C0EE2BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +38,6 @@ Global
 		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58879A32-F2B9-4351-8C16-7DA84C0EE2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58879A32-F2B9-4351-8C16-7DA84C0EE2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58879A32-F2B9-4351-8C16-7DA84C0EE2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58879A32-F2B9-4351-8C16-7DA84C0EE2BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
