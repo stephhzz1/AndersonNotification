@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationModel",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationFunction", "AndersonNotificationFunction\AndersonNotificationFunction.csproj", "{0717879A-DC84-4883-A06A-7FD7B55A7639}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndersonNotificationWeb", "AndersonNotificationWeb\AndersonNotificationWeb.csproj", "{0F23182B-2880-4790-85D4-C0E856BC5891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0717879A-DC84-4883-A06A-7FD7B55A7639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F23182B-2880-4790-85D4-C0E856BC5891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F23182B-2880-4790-85D4-C0E856BC5891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F23182B-2880-4790-85D4-C0E856BC5891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F23182B-2880-4790-85D4-C0E856BC5891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
