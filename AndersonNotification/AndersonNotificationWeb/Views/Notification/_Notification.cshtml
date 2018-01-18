@@ -1,0 +1,30 @@
+﻿@using AndersonNotificationModel
+@model Notification
+
+<input type="hidden" name="NotificationId" value="@Model.NotificationId" />
+@{
+    Html.RenderPartial("_AuditColumns");
+}
+
+<div class="form-group">
+    <label for="To">To:</label>
+    <input type="text" class="form-control" name="To" placeholder="To.." value="true">
+</div>
+
+<div class="form-group">
+    <label for="Subject">Subject</label>
+    <input type="email" class="form-control" name="Subject" placeholder="Subject" value="@Model.Subject" required>
+</div>
+
+<div class="form-group">
+    <label for="Body">Email Content</label>
+    <textarea class="form-control" rows="10" id="comment"></textarea>
+</div>
+
+<div class="form-group">
+    <input type="submit" class="btn btn-primary" value="Submit" />
+</div>
+
+<style>
+    textarea { resize: none; }
+</style>
