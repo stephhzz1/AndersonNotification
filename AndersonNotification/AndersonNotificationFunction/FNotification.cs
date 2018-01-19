@@ -2,6 +2,7 @@
 using AndersonNotificationEntity;
 using AndersonNotificationModel;
 using System.Collections.Generic;
+using AccountExternalModel;
 using System.Linq;
 
 namespace AndersonNotificationFunction
@@ -22,7 +23,7 @@ namespace AndersonNotificationFunction
         }
         #region Create
         public Notification Create(int createdBy, Notification notification)
-        {
+        {   
             var eNotification = ENotification(notification);
             eNotification = _iDNotification.Insert(eNotification);
             return Notification(eNotification);
@@ -35,6 +36,7 @@ namespace AndersonNotificationFunction
             var eNotification = _iDNotification.Read<ENotification>(a => a.NotificationId == notificationId);
             return Notification(eNotification);
         }
+
         public List<Notification> Read(string sortBy)
         {
             var eNotifications = _iDNotification.Read<ENotification>(a => true, sortBy);
