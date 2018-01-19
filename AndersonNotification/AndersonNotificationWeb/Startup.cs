@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System.Web.Http;
 using System.Web.Mvc;
+using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.OAuth;
 
 namespace AndersonNotificationWeb
 {
@@ -12,20 +13,17 @@ namespace AndersonNotificationWeb
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureCookie(app);
-            HttpConfiguration config = new HttpConfiguration();
-            AreaRegistration.RegisterAllAreas();
-            app.UseWebApi(config);
-        }
-        public void ConfigureCookie(IAppBuilder app)
-        {
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
-            {
-                AuthenticationType = "ApplicationCookie",
-                LoginPath = new PathString("/Credential/Login")
-            });
+            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
+            //ConfigureCookie(app);   
+        }   
 
-
-        }
+        //public void ConfigureCookie(IAppBuilder app)
+        //{
+        //    app.UseCookieAuthentication(new CookieAuthenticationOptions
+        //    {
+        //        AuthenticationType = "ApplicationCookie",
+        //        LoginPath = new PathString("/Credential/Login")
+        //    });
+        //}
     }
 }
