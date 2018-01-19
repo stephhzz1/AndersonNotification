@@ -1,5 +1,7 @@
 using System;
 using Microsoft.Practices.Unity;
+using AndersonNotificationData;
+using AndersonNotificationFunction;
 using AccountExternalData;
 using AccountExternalFunction;
 using Unity;
@@ -52,6 +54,14 @@ namespace AndersonNotificationWeb
 
             #region Function Reference
             container.RegisterType<IFCredential, FCredential>(new PerRequestLifetimeManager());
+            #endregion
+
+            #region Data
+            container.RegisterType<IDNotification, DNotification>(new PerRequestLifetimeManager());
+            #endregion
+
+            #region Function
+            container.RegisterType<IFNotification, FNotification>(new PerRequestLifetimeManager());
             #endregion
         }
     }

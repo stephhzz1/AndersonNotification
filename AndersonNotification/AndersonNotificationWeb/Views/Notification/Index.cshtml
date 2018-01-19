@@ -3,5 +3,54 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div ng-controller="NotificationController as model" ng-init="model.Initialise()">
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="../Notification/Create" class="btn btn-default">Create</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover table-sm table-bordered">
+                <thead>
+                    <tr class="thead-inverse">
+                        <th>NotificationId</th>
+                        <th>To</th>
+                        <th>From</th>
+                        <th>Subject</th>
+                        @*<th>Roles</th>*@
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="clickableRow" ng-repeat="credential in model.Credentials" ng-click="$event.originalEvent.dropdown || model.GoToUpdatePage(credential.CredentialId)" ng-init="model.UpdateEmployee(credential)">
+                        <td><span ng-bind="notification.NotificationId"></span></td>
+                        <td><span ng-bind="notification.To"></span></td>
+                        <td><span ng-bind="notification.From"></span></td>
+                        <td><span ng-bind="notification.Subject"></span></td>
+                        @*<td>{{notification}}</td>*@
+                        @*<td>
+                            <ul>
+                                <li ng-repeat="credentialRole in credential.CredentialRoles">
+                                    <span ng-bind="credentialRole.Role.Name"></span>
 
+                                </li>
+                            </ul>
+                        </td>*@
+                        <td ng-click="$event.originalEvent.dropdown = true">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" ng-click="model.GoToUpdatePage(credential.CredentialId)" data-target="#demo"><span class="fa fa-edit"></span> Edit</a></li>
+                                    <li><a href="#" ng-click="model.Delete(credential.CredentialId)"><span class="fa fa-trash-o"></span> Delete</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

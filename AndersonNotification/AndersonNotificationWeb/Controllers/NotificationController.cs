@@ -25,7 +25,7 @@ namespace AndersonNotificationWeb.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View(/*new Notification()*/);
+            return View(new Notification());
         }
         #endregion
 

@@ -10,7 +10,7 @@ namespace AndersonNotificationContext
         }
         protected override void Seed(Context context)
         {
-            context.Notification.Add(
+            context.Notifications.Add(
                 new ENotification
                 {
                 });

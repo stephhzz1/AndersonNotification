@@ -7,8 +7,13 @@
 }
 
 <div class="form-group">
-    <label for="To">To:</label>
-    <input type="text" class="form-control" name="To" placeholder="To.." value="true">
+    <label for="Sender">To:</label>
+    <input type="text" class="form-control" name="To" placeholder="To.." value="@Model.Sender" required>
+</div>
+
+<div class="form-group">
+    <label for="Receiver">From:</label>
+    <input type="text" class="form-control" name="To" placeholder="From.." value="@Model.Receiver" required>
 </div>
 
 <div class="form-group">
@@ -18,7 +23,7 @@
 
 <div class="form-group">
     <label for="Body">Email Content</label>
-    <textarea class="form-control" rows="10" id="comment"></textarea>
+    <textarea class="form-control" rows="10" id="comment" placeholder="Message"></textarea>
 </div>
 
 <div class="form-group">
