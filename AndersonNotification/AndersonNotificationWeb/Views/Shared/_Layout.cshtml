@@ -16,67 +16,42 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
-                @*Start Credential Dropdown*@
+                @*Start Notification Dropdown*@
                 <li>
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        Mail
+                        <i class="fa fa-envelope-square" aria-hidden="true"></i>
+                        Notification
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="nav-link" href="~/Notification">
+                            <a class="nav-link" href="~/Notification/Index">
                                 <i class="fa fa-list" aria-hidden="true"></i>
                                 List
                             </a>
                         </li>
+
                         <li>
                             <a class="nav-link" href="~/Notification/Create">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                Create
+                                Send Email
                             </a>
                         </li>
                     </ul>
                 </li>
                 @*End Credential Dropdown*@
 
-                @*Start Role Dropdown*@
-                @*<li>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-group" aria-hidden="true"></i>
-                        Role
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="nav-link" href="~/Role">
-                                <i class="fa fa-list" aria-hidden="true"></i>
-                                List
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="~/Role/Create">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                Create
-                            </a>
-                        </li>
-                    </ul>
-                </li>*@
-                @*End Role Dropdown*@
                 <li><a href="~/Home/About"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
 
+            <ul class="nav navbar-nav navbar-right">
                 @*Start User Dropdown*@
                 <li>
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user" aria-hidden="true"> @*@Cookies.Username*@ </i>
+                        <i class="fa fa-sort-down" aria-hidden="true"></i>
+
                     </a>
+
                     <ul class="dropdown-menu">
-                        @*<li>
-                            <a class="nav-link" href="~/Credential/ChangePassword">
-                                <i class="fa fa-key" aria-hidden="true"></i>
-                                Change Password
-                            </a>
-                        </li>*@
                         <li>
                             <a class="nav-link" href="~/Credential/Signout">
                                 <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -87,6 +62,7 @@
                 </li>
                 @*End User Dropdown*@
             </ul>
+
         </div>
     </nav>
     <div id="MainContainer" class="body-content" ng-app="App">
