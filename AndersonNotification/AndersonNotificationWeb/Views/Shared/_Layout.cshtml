@@ -42,6 +42,27 @@
 
                 <li><a href="~/Home/About"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
             </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                @*Start User Dropdown*@
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-sort-down" aria-hidden="true"></i>
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="nav-link" href="~/Credential/Signout">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @*End User Dropdown*@
+            </ul>
+
         </div>
     </nav>
     <div id="MainContainer" class="body-content" ng-app="App">

@@ -6,8 +6,5 @@ namespace AndersonNotificationData
 {
     public interface IDNotification : IDBase
     {
-        #region Read
-        List<ENotification> Read();
-        #endregion
     }
 }
