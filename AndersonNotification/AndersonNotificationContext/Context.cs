@@ -5,7 +5,7 @@ namespace AndersonNotificationContext
 {
     public class Context : DbContext
     {
-        public Context() : base("AndersonNotification")
+        public Context() : base("Notification")
         {
 
             if (Database.Exists())
@@ -20,5 +20,4 @@ namespace AndersonNotificationContext
 
         public DbSet<ENotification> Notifications { get; set; }
     }
-
 }

@@ -27,6 +27,13 @@ namespace AndersonNotificationWeb.Controllers
         {
             return View(new Notification());
         }
+
+        [HttpPost]
+        public ActionResult Create(Notification notification)
+        {
+            var createdNotification = _iFNotification.Create(CredentialId,notification);
+            return RedirectToAction("Index");
+        }
         #endregion
 
         #region Read
