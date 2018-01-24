@@ -28,13 +28,13 @@ namespace AndersonNotificationData
         //}
             #endregion
 
-            #region Update
-            #endregion
+        #region Update
+        #endregion
 
-            #region Delete
-            #endregion
+        #region Delete
+        #endregion
 
-            #region Other Function
-            #endregion
+        #region Other Function
+        #endregion
         }
 }

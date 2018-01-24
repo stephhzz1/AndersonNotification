@@ -77,6 +77,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = notification.NotificationId,
                 Sender = notification.Sender,
+                Password = notification.Password,
                 Body = notification.Body,
                 Receiver = notification.Receiver,
             };
@@ -94,6 +95,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = eNotification.NotificationId,
                 Sender = eNotification.Sender,
+                Password = eNotification.Password,
                 Body = eNotification.Body,
                 Receiver = eNotification.Receiver,
             };
@@ -110,6 +112,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = a.NotificationId,
                 Sender = a.Sender,
+                Password = a.Password,
                 Body = a.Body,
                 Receiver = a.Receiver,
 

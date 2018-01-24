@@ -1,22 +1,14 @@
 ﻿using AndersonNotificationFunction;
 using AndersonNotificationModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
+using System.Net.Mail;
 using System.Web.Mvc;
-using System.Web.Security;
-using AccountExternalFunction;
-using AccountExternalModel;
-using ExternalAccountWebAuthentication.Authentication;
 
 namespace AndersonNotificationWeb.Controllers
 {
-    public class NotificationController : BaseController
+    public class EmailNotificationController : BaseController
     {
         private IFNotification _iFNotification;
-        public NotificationController(IFNotification iFNotification)
+        public EmailNotificationController(IFNotification iFNotification)
         {
             _iFNotification = iFNotification;
         }
@@ -32,6 +24,11 @@ namespace AndersonNotificationWeb.Controllers
         public ActionResult Create(Notification notification)
         {
             var createdNotification = _iFNotification.Create(CredentialId,notification);
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Credentials = new System.Net.NetworkCredential(notification.Sender, notification.Password);
+            
+            smtpClient.Send(from: notification.Sender, recipients: notification.Receiver, subject: notification.Subject, body: notification.Body);
+
             return RedirectToAction("Index");
         }
         #endregion

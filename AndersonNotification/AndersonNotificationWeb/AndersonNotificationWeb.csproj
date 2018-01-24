@@ -394,7 +394,9 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -605,10 +607,10 @@
     <Content Include="Views\Shared\_AuditColumns.cshtml" />
     <Content Include="Views\Shared\_PartialCSS.cshtml" />
     <Content Include="Views\Shared\_PartialScript.cshtml" />
-    <Content Include="Views\Notification\_Notification.cshtml" />
-    <Content Include="Views\Notification\Create.cshtml" />
+    <Content Include="Views\EmailNotification\_EmailNotification.cshtml" />
+    <Content Include="Views\EmailNotification\Create.cshtml" />
     <Content Include="Views\Credential\Login.cshtml" />
-    <Content Include="Views\Notification\Index.cshtml" />
+    <Content Include="Views\EmailNotification\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
