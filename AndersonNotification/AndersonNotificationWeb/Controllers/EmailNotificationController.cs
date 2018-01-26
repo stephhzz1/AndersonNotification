@@ -35,7 +35,7 @@ namespace AndersonNotificationWeb.Controllers
             }
             catch (Exception)
             {
-                return Json("Error on logging in");
+                return Json("Error Send!");
             }
             return RedirectToAction("Index");
         }
