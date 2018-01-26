@@ -22,12 +22,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="clickableRow" ng-repeat="notification in model.Notifications" ng-click="$event.originalEvent.dropdown || model.GoToUpdatePage(notification.NotificationId)" ng-init="model.UpdateEmailNotification(notification)">
-                        <td><span ng-bind="notification.NotificationId"></span></td>
-                        <td><span ng-bind="notification.Sender"></span></td>
-                        <td><span ng-bind="notification.Receiver"></span></td>
-                        <td><span ng-bind="notification.Subject"></span></td>
-                        <td><span ng-bind="notification.Body"></span></td>
+                    <tr class="clickableRow" ng-repeat="emailnotification in model.EmailNotifications" ng-click="$event.originalEvent.dropdown || model.GoToUpdatePage(emailnotification.emailNotificationId)" ng-init="model.UpdateEmailNotification(emailnotification)">
+                        <td><span ng-bind="emailnotification.NotificationId"></span></td>
+                        <td><span ng-bind="emailnotification.Sender"></span></td>
+                        <td><span ng-bind="emailnotification.Receiver"></span></td>
+                        <td><span ng-bind="emailnotification.Subject"></span></td>
+                        <td><span ng-bind="emailnotification.Body"></span></td>
                     </tr>
                 </tbody>
             </table>

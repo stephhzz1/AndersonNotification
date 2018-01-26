@@ -1,5 +1,6 @@
 ﻿using AndersonNotificationFunction;
 using AndersonNotificationModel;
+using System;
 using System.Net.Mail;
 using System.Web.Mvc;
 
@@ -7,28 +8,35 @@ namespace AndersonNotificationWeb.Controllers
 {
     public class EmailNotificationController : BaseController
     {
-        private IFNotification _iFNotification;
-        public EmailNotificationController(IFNotification iFNotification)
+        private IFEmailNotification _iFEmailNotification;
+        public EmailNotificationController(IFEmailNotification iFEmailNotification)
         {
-            _iFNotification = iFNotification;
+            _iFEmailNotification = iFEmailNotification;
         }
 
         #region Create
         [HttpGet]
         public ActionResult Create()
         {
-            return View(new Notification());
+            return View(new EmailNotification());
         }
 
         [HttpPost]
-        public ActionResult Create(Notification notification, string Password)
+        public ActionResult Create(EmailNotification notification,string Password)
         {
-            var createdNotification = _iFNotification.Create(CredentialId,notification);
+            var createdNotification = _iFEmailNotification.Create(CredentialId,notification);
             SmtpClient smtpClient = new SmtpClient();
-            smtpClient.Credentials = new System.Net.NetworkCredential(notification.Sender, Password);
-            
-            smtpClient.Send(from: notification.Sender, recipients: notification.Receiver, subject: notification.Subject, body: notification.Body);
 
+            try
+            {
+                smtpClient.Credentials = new System.Net.NetworkCredential(notification.Sender, Password);
+                smtpClient.Send(from: notification.Sender, recipients: notification.Receiver, subject: notification.Subject, body: notification.Body);
+                
+            }
+            catch (Exception)
+            {
+                return Json("Error on logging in");
+            }
             return RedirectToAction("Index");
         }
         #endregion
@@ -38,6 +46,12 @@ namespace AndersonNotificationWeb.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public JsonResult Read()
+        {
+            return Json(_iFEmailNotification.Read("Name"));
         }
         #endregion
 

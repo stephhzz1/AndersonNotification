@@ -18,6 +18,6 @@ namespace AndersonNotificationContext
             }
         }
 
-        public DbSet<ENotification> Notifications { get; set; }
+        public DbSet<EEmalNotification> EmailNotifications { get; set; }
     }
 }

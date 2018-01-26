@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace AccountExternalWeb.App_Start
+namespace AndersonNotificationWeb.App_Start
 {
     public class BundleConfig
     {
@@ -11,7 +11,8 @@ namespace AccountExternalWeb.App_Start
                 .IncludeDirectory("~/Scripts/Angular/Controller", "*.js", true)
                 //.IncludeDirectory("~/Scripts/Angular/Directive", "*.js", true)
                 .IncludeDirectory("~/Scripts/Angular/Service", "*.js", true));
-                System.Web.Optimization.BundleTable.EnableOptimizations = true;
+
+            System.Web.Optimization.BundleTable.EnableOptimizations = true;
         }
     }
 }
