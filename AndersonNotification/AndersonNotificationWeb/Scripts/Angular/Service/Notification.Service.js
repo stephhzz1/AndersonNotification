@@ -3,11 +3,11 @@
 
     angular
         .module('App')
-        .factory('NotificationService', NotificationService);
+        .factory('EmailNotificationService', EmailNotificationService);
 
-    NotificationService.$inject = ['$http'];
+    EmailNotificationService.$inject = ['$http'];
 
-    function NotificationService($http) {
+    function EmailNotificationService($http) {
         return {
             Read: Read,
         }
@@ -15,7 +15,7 @@
         function Read() {
             return $http({
                 method: 'POST',
-                url: '/Notification/Read',
+                url: '/EmailNotification/Read',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             });
         }
