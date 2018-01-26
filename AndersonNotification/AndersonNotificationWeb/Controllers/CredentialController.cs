@@ -20,8 +20,7 @@ namespace AndersonNotificationWeb.Controllers
             _iFCredential = iFCredential;
         }
 
-
-        #region Read
+    #region Read
         [Route("Login")]
         [HttpGet]
         public ActionResult Login()
