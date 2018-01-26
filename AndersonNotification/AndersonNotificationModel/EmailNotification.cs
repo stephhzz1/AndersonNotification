@@ -1,9 +1,8 @@
 ﻿using BaseModel;
-using System.Collections.Generic;
 
 namespace AndersonNotificationModel
 {
-    public class Notification : Base
+    public class EmailNotification : Base
     {
         public int NotificationId { get; set; }
         public string Sender { get; set; }

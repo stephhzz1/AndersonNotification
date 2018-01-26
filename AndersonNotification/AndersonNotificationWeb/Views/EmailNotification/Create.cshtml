@@ -1,5 +1,5 @@
 ﻿@using AndersonNotificationModel;
-@model Notification
+@model EmailNotification
 
 @{
     ViewBag.Title = "Create";
@@ -9,9 +9,9 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <form action="~/Notification/Create" method="post">
+        <form action="~/EmailNotification/Create" method="post">
             @{
-                Html.RenderPartial("_Notification", Model);
+                Html.RenderPartial("_EmailNotification", Model);
             }
         </form>
     </div>

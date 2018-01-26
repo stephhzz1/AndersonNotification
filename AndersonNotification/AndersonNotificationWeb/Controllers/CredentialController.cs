@@ -57,7 +57,7 @@ namespace AndersonNotificationWeb.Controllers
                 }
                 return View();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return Json("Error on logging in");
             }

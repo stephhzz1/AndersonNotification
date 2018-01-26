@@ -3,22 +3,20 @@
 
     angular
         .module('App')
-        .controller('NotificationController', NotificationController);
+        .controller('EmailNotificationController', EmailNotificationController);
 
-    NotificationController.$inject = ['$filter', '$window', 'NotificationService'];
+    EmailNotificationController.$inject = ['$filter', '$window', 'EmailNotificationService'];
 
-    function NotificationController($filter, $window, NotificationService) {
+    function EmailNotificationController($filter, $window, EmailNotificationService) {
         var vm = this;
 
-        vm.Notifications = [];
+        vm.EmailNotifications = [];
 
         vm.GoToUpdatePage = GoToUpdatePage;
         vm.Initialise = Initialise;
 
-        vm.Delete = Delete;
-
-        function GoToUpdatePage(notificationId) {
-            $window.location.href = '../Notification/Update/' + notificationId;
+        function GoToUpdatePage(emailNotificationId) {
+            $window.location.href = '../EmailNotification/Update/' + emailNotificationId;
         }
 
         function Initialise() {
@@ -26,9 +24,9 @@
         }
 
         function Read() {
-            NotificationService.Read()
+            EmailNotificationService.Read()
                 .then(function (response) {
-                    vm.Notifications = response.data;
+                    vm.EmailNotifications = response.data;
                 })
                 .catch(function (data, status) {
                     new PNotify({
