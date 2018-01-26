@@ -6,7 +6,7 @@
 <div ng-controller="EmailNotificationController as model" ng-init="model.Initialise()">
     <div class="row">
         <div class="col-sm-4">
-            <a href="../Notification/Create" class="btn btn-default">Create</a>
+            <a href="../EmailNotification/Create" class="btn btn-default">Create</a>
         </div>
     </div>
     <div class="row">
@@ -22,12 +22,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="clickableRow" ng-repeat="notification in model.Notifications" ng-click="$event.originalEvent.dropdown || model.GoToUpdatePage(notification.NotificationId)" ng-init="model.UpdateEmployee(notification)">
+                    <tr class="clickableRow" ng-repeat="notification in model.Notifications" ng-click="$event.originalEvent.dropdown || model.GoToUpdatePage(notification.NotificationId)" ng-init="model.UpdateEmailNotification(notification)">
                         <td><span ng-bind="notification.NotificationId"></span></td>
-                        <td><span ng-bind="notification.To"></span></td>
-                        <td><span ng-bind="notification.From"></span></td>
+                        <td><span ng-bind="notification.Sender"></span></td>
+                        <td><span ng-bind="notification.Receiver"></span></td>
                         <td><span ng-bind="notification.Subject"></span></td>
-                        <td><span ng-bind="notification.Message"></span></td>
+                        <td><span ng-bind="notification.Body"></span></td>
                     </tr>
                 </tbody>
             </table>

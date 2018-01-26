@@ -21,11 +21,11 @@ namespace AndersonNotificationWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Notification notification)
+        public ActionResult Create(Notification notification, string Password)
         {
             var createdNotification = _iFNotification.Create(CredentialId,notification);
             SmtpClient smtpClient = new SmtpClient();
-            smtpClient.Credentials = new System.Net.NetworkCredential(notification.Sender, notification.Password);
+            smtpClient.Credentials = new System.Net.NetworkCredential(notification.Sender, Password);
             
             smtpClient.Send(from: notification.Sender, recipients: notification.Receiver, subject: notification.Subject, body: notification.Body);
 
