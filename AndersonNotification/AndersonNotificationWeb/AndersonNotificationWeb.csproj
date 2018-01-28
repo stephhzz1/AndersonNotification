@@ -78,8 +78,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="ExternalAccountWebAuthentication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ExternalAccountWebAuthentication">
       <HintPath>..\..\..\DLL\Release\AccountExternal\ExternalAccountWebAuthentication.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -387,7 +386,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\Angular\app.module.js" />
     <Content Include="Scripts\Angular\Controller\EmailNotification.Controller.js" />
-    <Content Include="Scripts\Angular\Service\Notification.Service.js" />
+    <Content Include="Scripts\Angular\Service\EmailNotification.Service.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -399,6 +398,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
@@ -622,6 +622,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="bower_components\pnotify\libtests\requirejs\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\BaseApi\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

@@ -15,8 +15,6 @@
         vm.GoToUpdatePage = GoToUpdatePage;
         vm.Initialise = Initialise;
 
-        vm.Delete = Delete;
-
         function GoToUpdatePage(emailNotificationId) {
             $window.location.href = '../EmailNotification/Update/' + emailNotificationId;
         }

@@ -20,8 +20,7 @@ namespace AndersonNotificationWeb.Controllers
             _iFCredential = iFCredential;
         }
 
-
-        #region Read
+    #region Read
         [Route("Login")]
         [HttpGet]
         public ActionResult Login()
@@ -57,7 +56,7 @@ namespace AndersonNotificationWeb.Controllers
                 }
                 return View();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return Json("Error on logging in");
             }
