@@ -21,6 +21,7 @@ namespace AndersonNotificationFunction
             _iDNotification = new DNotification();
 
         }
+
         #region Create
         public Notification Create(int createdBy, Notification notification)
         {   
@@ -77,6 +78,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = notification.NotificationId,
                 Sender = notification.Sender,
+                Password = notification.Password,
                 Body = notification.Body,
                 Receiver = notification.Receiver,
             };
@@ -94,10 +96,12 @@ namespace AndersonNotificationFunction
 
                 NotificationId = eNotification.NotificationId,
                 Sender = eNotification.Sender,
+                Password = eNotification.Password,
                 Body = eNotification.Body,
                 Receiver = eNotification.Receiver,
             };
         }
+
         private List<Notification> Notifications(List<ENotification> eNotifications)
         {
             return eNotifications.Select(a => new Notification
@@ -110,13 +114,11 @@ namespace AndersonNotificationFunction
 
                 NotificationId = a.NotificationId,
                 Sender = a.Sender,
+                Password = a.Password,
                 Body = a.Body,
                 Receiver = a.Receiver,
-
-
             }).ToList();
         }
         #endregion
-
     }
 }
