@@ -22,22 +22,21 @@ namespace AndersonNotificationWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(EmailNotification notification,string Password)
+        public ActionResult Create(EmailNotification notification, string Sender, string Password)
         {
-            var createdNotification = _iFEmailNotification.Create(CredentialId,notification);
             SmtpClient smtpClient = new SmtpClient();
 
             try
             {
-                smtpClient.Credentials = new System.Net.NetworkCredential(notification.Sender, Password);
+                var createdNotification = _iFEmailNotification.Create(CredentialId, notification);
+                smtpClient.Credentials = new System.Net.NetworkCredential(Sender, Password);
                 smtpClient.Send(from: notification.Sender, recipients: notification.Receiver, subject: notification.Subject, body: notification.Body);
-                
+                return RedirectToAction("Index");
             }
             catch (Exception)
             {
-                return Json("Error on logging in");
+                return RedirectToAction("Create");
             }
-            return RedirectToAction("Index");
         }
         #endregion
 
