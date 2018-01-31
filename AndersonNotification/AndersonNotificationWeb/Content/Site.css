@@ -12,15 +12,3 @@ select,
 textarea {
     max-width: 280px;
 }
-.footer {
-    position: fixed;
-    left: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    bottom: 0;
-    width: 100%;
-    color: black;
-    text-align: center;
-    background-color: lightgray;
-}
-

@@ -1,5 +1,4 @@
-﻿using ExternalAccountWebAuthentication.Authentication;
-using System;
+﻿using System;
 using System.Web.Http;
 
 namespace AndersonNotificationWeb.ApiControllers
@@ -11,6 +10,20 @@ namespace AndersonNotificationWeb.ApiControllers
         public IHttpActionResult Get()
         {
             return Ok(new string[] { "value1", "value2" });
+        }
+        public string Get (int Id)
+        {
+            return "value";
+        }
+        public void Post ([FromBody]string value)
+        {
+        }
+        public void Put (int Id,[FromBody]string value)
+        {
+        }
+        public void Delete(int Id)
+        {
+
         }
     }
 }
