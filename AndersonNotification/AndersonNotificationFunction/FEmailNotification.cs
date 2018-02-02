@@ -28,6 +28,7 @@ namespace AndersonNotificationFunction
             eEmailNotification.CreatedDate = DateTime.Now;
             eEmailNotification.CreatedBy = createdBy;
             eEmailNotification = _iDEmailNotification.Insert(eEmailNotification);
+
             return Notification(eEmailNotification);
         }
         #endregion
