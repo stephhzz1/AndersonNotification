@@ -398,8 +398,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\BaseApiController.cs" />
-    <Compile Include="Controllers\TestApiController.cs" />
+    <Compile Include="APIControllers\BaseApiController.cs" />
+    <Compile Include="APIControllers\EmailNotificationApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
