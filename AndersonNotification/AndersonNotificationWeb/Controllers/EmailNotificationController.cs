@@ -24,10 +24,23 @@ namespace AndersonNotificationWeb.Controllers
         {
             FEmailNotification fe = new FEmailNotification();
             fe.Send(CredentialId,notification);
-
-            return RedirectToAction("Index");
-           
-
+            
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    TempData["message"] = "Email has been sent, successfully!";
+                }
+                return RedirectToAction("Create");
+            }
+            catch (Exception)
+            {
+                if (ModelState.IsValid)
+                {
+                    TempData["message"] = "Opps! Something went wrong. Please, try again.";
+                }
+                return RedirectToAction("Create");
+            }
         }
 
         #endregion
