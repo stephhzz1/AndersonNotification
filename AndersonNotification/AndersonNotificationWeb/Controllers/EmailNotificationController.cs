@@ -33,16 +33,14 @@ namespace AndersonNotificationWeb.Controllers
                 smtpClient.Send(from: notification.Sender, recipients: notification.Receiver, subject: notification.Subject, body: notification.Body);
                 if (ModelState.IsValid)
                 {
-                    // Do your stuff
                     TempData["message"] = "Email has been sent, successfully!";
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
             catch (Exception)
             {
                 if (ModelState.IsValid)
                 {
-                    // Do your stuff
                     TempData["message"] = "Opps! Something went wrong. Please, try again.";
                 }
                 return RedirectToAction("Create");
