@@ -9,6 +9,10 @@ namespace AndersonNotificationFunction
         EmailNotification Create(int createdBy, EmailNotification emailnotification);
         #endregion
 
+        #region Send
+        EmailNotification Send(int createdBy, EmailNotification emailnotification);
+        #endregion
+
         #region Read
         EmailNotification Read(int notificationId);
         List<EmailNotification> Read(string sortBy);
