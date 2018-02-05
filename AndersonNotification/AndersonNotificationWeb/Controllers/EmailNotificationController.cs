@@ -1,7 +1,5 @@
 ﻿using AndersonNotificationFunction;
 using AndersonNotificationModel;
-using System;
-using System.Net.Mail;
 using System.Web.Mvc;
 
 namespace AndersonNotificationWeb.Controllers
@@ -24,13 +22,11 @@ namespace AndersonNotificationWeb.Controllers
         [HttpPost]
         public ActionResult Create(EmailNotification notification, string Sender, string Password)
         {
-            SmtpClient smtpClient = new SmtpClient();
-
+            FEmailNotification fe = new FEmailNotification();
+            fe.Send(CredentialId,notification);
+            
             try
             {
-                var createdNotification = _iFEmailNotification.Create(CredentialId, notification);
-                smtpClient.Credentials = new System.Net.NetworkCredential(Sender, Password);
-                smtpClient.Send(from: notification.Sender, recipients: notification.Receiver, subject: notification.Subject, body: notification.Body);
                 if (ModelState.IsValid)
                 {
                     TempData["message"] = "Email has been sent, successfully!";
