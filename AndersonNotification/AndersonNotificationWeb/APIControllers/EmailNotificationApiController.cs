@@ -2,6 +2,7 @@
 using AndersonNotificationFunction;
 using AndersonNotificationModel;
 using System.Web.Http;
+using System;
 
 namespace AndersonNotificationWeb.ApiControllers
 {
@@ -9,6 +10,8 @@ namespace AndersonNotificationWeb.ApiControllers
     {
         private IFEmailNotification _iFEmailNotification;
         private IDEmailNotification _iDEmailNotification;
+
+        public object CredentialId { get; private set; }
 
         public EmailNotificationApiController()
         {
@@ -23,6 +26,11 @@ namespace AndersonNotificationWeb.ApiControllers
             fe.Send(CredentialId, emailNotification);
 
             return Ok(emailNotification);
+        }
+
+        private IHttpActionResult Ok(EmailNotification emailNotification)
+        {
+            throw new NotImplementedException();
         }
     }
 }
