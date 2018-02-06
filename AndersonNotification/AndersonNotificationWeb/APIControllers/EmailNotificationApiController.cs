@@ -10,9 +10,7 @@ namespace AndersonNotificationWeb.ApiControllers
     {
         private IFEmailNotification _iFEmailNotification;
         private IDEmailNotification _iDEmailNotification;
-
-        public object CredentialId { get; private set; }
-
+        
         public EmailNotificationApiController()
         {
             _iDEmailNotification  = new DEmailNotification();
@@ -27,10 +25,6 @@ namespace AndersonNotificationWeb.ApiControllers
 
             return Ok(emailNotification);
         }
-
-        private IHttpActionResult Ok(EmailNotification emailNotification)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
