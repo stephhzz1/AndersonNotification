@@ -5,6 +5,16 @@
 @{
     Html.RenderPartial("_AuditColumns");
 }
+
+@{
+    if (TempData["message"] != null)
+    {
+        <script type="text/javascript">
+        alert(@Html.Raw(Json.Encode(TempData["message"])));
+        </script>
+    }
+}
+
 <div class="form-group">
     <label for="Sender">From:</label>
     <input type="email" class="form-control" name="Sender" placeholder="Sender's Email Address.." value="@Model.Sender" required>
