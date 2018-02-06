@@ -1,5 +1,6 @@
 ﻿using AndersonNotificationFunction;
 using AndersonNotificationModel;
+using System;
 using System.Web.Mvc;
 
 namespace AndersonNotificationWeb.Controllers
@@ -33,7 +34,7 @@ namespace AndersonNotificationWeb.Controllers
                 }
                 return RedirectToAction("Create");
             }
-            catch (Exception)
+            catch (Exception )
             {
                 if (ModelState.IsValid)
                 {
