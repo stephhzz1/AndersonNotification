@@ -32,6 +32,11 @@ namespace AndersonNotificationFunction
            
             return Notification(eEmailNotification);
         }
+
+        public void Send(object credentialId, EmailNotification emailNotification)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Send
