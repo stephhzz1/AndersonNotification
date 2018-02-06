@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="clickableRow" ng-repeat="emailnotification in model.EmailNotifications" ng-click="$event.originalEvent.dropdown || model.GoToUpdatePage(emailnotification.emailNotificationId)" ng-init="model.UpdateEmailNotification(emailnotification)">
+                    <tr ng-repeat="emailnotification in model.EmailNotifications" ng-click="$event.originalEvent.dropdown || model.GoToUpdatePage(emailnotification.emailNotificationId)">
                         <td class="text-center"><span ng-bind="emailnotification.NotificationId"></span></td>
                         <td class="text-center"><span ng-bind="emailnotification.Sender"></span></td>
                         <td class="text-center"><span ng-bind="emailnotification.Receiver"></span></td>
