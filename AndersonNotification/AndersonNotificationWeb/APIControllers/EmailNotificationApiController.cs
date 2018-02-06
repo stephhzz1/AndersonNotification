@@ -1,8 +1,8 @@
 ﻿using AndersonNotificationData;
 using AndersonNotificationFunction;
 using AndersonNotificationModel;
-using System.Net.Mail;
 using System.Web.Http;
+using System;
 
 namespace AndersonNotificationWeb.ApiControllers
 {
@@ -10,6 +10,8 @@ namespace AndersonNotificationWeb.ApiControllers
     {
         private IFEmailNotification _iFEmailNotification;
         private IDEmailNotification _iDEmailNotification;
+
+        public object CredentialId { get; private set; }
 
         public EmailNotificationApiController()
         {
@@ -20,14 +22,15 @@ namespace AndersonNotificationWeb.ApiControllers
         [HttpPost]
         public IHttpActionResult Get(EmailNotification emailNotification)
         {
-            var Password = "SUBJECTIVE TO CHANGE.";
-            SmtpClient smtpClient = new SmtpClient();
-
-            var createdNotification = _iFEmailNotification.Create(CredentialId, emailNotification);
-            smtpClient.Credentials = new System.Net.NetworkCredential(emailNotification.Sender, Password);
-            smtpClient.Send(from: emailNotification.Sender, recipients: emailNotification.Receiver, subject: emailNotification.Subject, body: emailNotification.Body);
+            FEmailNotification fe = new FEmailNotification();
+            fe.Send(CredentialId, emailNotification);
 
             return Ok(emailNotification);
+        }
+
+        private IHttpActionResult Ok(EmailNotification emailNotification)
+        {
+            throw new NotImplementedException();
         }
     }
 }
