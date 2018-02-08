@@ -1,7 +1,6 @@
 ﻿using AndersonNotificationFunction;
 using AndersonNotificationModel;
 using System;
-using System.Net.Mail;
 using System.Web.Mvc;
 
 namespace AndersonNotificationWeb.Controllers
@@ -22,23 +21,29 @@ namespace AndersonNotificationWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(EmailNotification notification,string Password)
+        public ActionResult Create(EmailNotification notification, string Sender, string Password)
         {
-            var createdNotification = _iFEmailNotification.Create(CredentialId,notification);
-            SmtpClient smtpClient = new SmtpClient();
-
+            FEmailNotification fe = new FEmailNotification();
+            fe.Send(CredentialId,notification, Password);
+            
             try
             {
-                smtpClient.Credentials = new System.Net.NetworkCredential(notification.Sender, Password);
-                smtpClient.Send(from: notification.Sender, recipients: notification.Receiver, subject: notification.Subject, body: notification.Body);
-                
+                if (ModelState.IsValid)
+                {
+                    TempData["message"] = "Email has been sent, successfully!";
+                }
+                return RedirectToAction("Create");
             }
-            catch (Exception)
+            catch (Exception )
             {
-                return Json("Error on logging in");
+                if (ModelState.IsValid)
+                {
+                    TempData["message"] = "Opps! Something went wrong. Please, try again.";
+                }
+                return RedirectToAction("Create");
             }
-            return RedirectToAction("Index");
         }
+
         #endregion
 
         #region Read

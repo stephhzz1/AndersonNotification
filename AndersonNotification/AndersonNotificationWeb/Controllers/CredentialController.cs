@@ -2,8 +2,6 @@
 using AccountExternalModel;
 using ExternalAccountWebAuthentication.Authentication;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -20,8 +18,7 @@ namespace AndersonNotificationWeb.Controllers
             _iFCredential = iFCredential;
         }
 
-
-        #region Read
+    #region Read
         [Route("Login")]
         [HttpGet]
         public ActionResult Login()
