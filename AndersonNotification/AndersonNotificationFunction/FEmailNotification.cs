@@ -35,14 +35,13 @@ namespace AndersonNotificationFunction
         #endregion
 
         #region Send
-        public EmailNotification Send(int createdBy,EmailNotification emailNotification)
+        public EmailNotification Send(int createdBy,EmailNotification emailNotification, string Password)
         {
 
             Create(createdBy, emailNotification);
-            var Password = "SUBJECTIVE TO CHANGE.";
             SmtpClient smtpClient = new SmtpClient();
             smtpClient.Credentials = new System.Net.NetworkCredential(emailNotification.Sender, Password);
-            smtpClient.Send(from: emailNotification.Sender, recipients: emailNotification.Receiver, subject: emailNotification.Subject, body: emailNotification.Body);
+            smtpClient.Send(from: emailNotification.Sender, CC: emailNotification.CC, recipients: emailNotification.Receiver, subject: emailNotification.Subject, body: emailNotification.Body);
 
             return emailNotification;
         }
