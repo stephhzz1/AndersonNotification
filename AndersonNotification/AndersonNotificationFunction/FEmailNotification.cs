@@ -12,7 +12,7 @@ namespace AndersonNotificationFunction
     {
         private IDEmailNotification _iDEmailNotification;
 
-        public FEmailNotification(IDEmailNotification iDNotifications)
+        public FEmailNotification(IDEmailNotification iDNotifications) 
         {
             _iDEmailNotification = iDNotifications;
         }
