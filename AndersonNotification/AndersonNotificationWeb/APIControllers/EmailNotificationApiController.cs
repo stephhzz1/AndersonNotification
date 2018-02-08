@@ -2,6 +2,7 @@
 using AndersonNotificationFunction;
 using AndersonNotificationModel;
 using System.Web.Http;
+using System;
 
 namespace AndersonNotificationWeb.ApiControllers
 {
@@ -9,7 +10,7 @@ namespace AndersonNotificationWeb.ApiControllers
     {
         private IFEmailNotification _iFEmailNotification;
         private IDEmailNotification _iDEmailNotification;
-
+        
         public EmailNotificationApiController()
         {
             _iDEmailNotification  = new DEmailNotification();
@@ -24,5 +25,6 @@ namespace AndersonNotificationWeb.ApiControllers
 
             return Ok(emailNotification);
         }
+        
     }
 }

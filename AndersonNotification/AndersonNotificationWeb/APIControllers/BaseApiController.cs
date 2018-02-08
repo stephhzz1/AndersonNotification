@@ -1,5 +1,4 @@
 ﻿using ExternalAccountWebAuthentication.ApiController;
-using ExternalAccountWebAuthentication.Authentication;
 
 namespace AndersonNotificationWeb.ApiControllers
 {
