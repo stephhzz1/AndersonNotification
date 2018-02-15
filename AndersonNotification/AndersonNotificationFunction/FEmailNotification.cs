@@ -45,9 +45,11 @@ namespace AndersonNotificationFunction
 
             Create(createdBy, emailNotification);
             SmtpClient smtpClient = new SmtpClient();
+            MailMessage m = new MailMessage();
+            m.To.Add(emailNotification.CC);
             smtpClient.Credentials = new System.Net.NetworkCredential(emailNotification.Sender, Password);
-            smtpClient.Send(from: emailNotification.Sender, CC: emailNotification.CC, recipients: emailNotification.Receiver, subject: emailNotification.Subject, body: emailNotification.Body);
-
+            smtpClient.Send(from: emailNotification.Sender, recipients: emailNotification.Receiver, subject: emailNotification.Subject, body: emailNotification.Body);
+            
             return emailNotification;
         }
         #endregion
@@ -97,6 +99,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = emailnotification.NotificationId,
                 Sender = emailnotification.Sender,
+                CC = emailnotification.CC,
                 Receiver = emailnotification.Receiver,
                 Subject = emailnotification.Subject,
                 Body = emailnotification.Body,
@@ -115,6 +118,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = eemailnotification.NotificationId,
                 Sender = eemailnotification.Sender,
+                CC = eemailnotification.CC,
                 Receiver = eemailnotification.Receiver,
                 Subject = eemailnotification.Subject,
                 Body = eemailnotification.Body,
@@ -132,6 +136,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = a.NotificationId,
                 Sender = a.Sender,
+                CC = a.CC,
                 Receiver = a.Receiver,
                 Subject = a.Subject,
                 Body = a.Body,

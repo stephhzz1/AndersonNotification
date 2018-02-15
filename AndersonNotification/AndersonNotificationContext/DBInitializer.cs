@@ -15,6 +15,7 @@ namespace AndersonNotificationContext
                 {
                     Sender = "notification@testing.com",
                     Receiver = "notification@testing.com",
+                    CC = "notification@testing.com",
                     Subject = "Testing",
                     Body = "notification@testing.com",
                 });
