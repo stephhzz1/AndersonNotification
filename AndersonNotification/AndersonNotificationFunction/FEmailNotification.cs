@@ -4,6 +4,7 @@ using AndersonNotificationModel;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using System.Net.Mail;
 
 namespace AndersonNotificationFunction
 {
@@ -11,7 +12,7 @@ namespace AndersonNotificationFunction
     {
         private IDEmailNotification _iDEmailNotification;
 
-        public FEmailNotification(IDEmailNotification iDNotifications)
+        public FEmailNotification(IDEmailNotification iDNotifications) 
         {
             _iDEmailNotification = iDNotifications;
         }
@@ -28,7 +29,26 @@ namespace AndersonNotificationFunction
             eEmailNotification.CreatedDate = DateTime.Now;
             eEmailNotification.CreatedBy = createdBy;
             eEmailNotification = _iDEmailNotification.Insert(eEmailNotification);
+           
             return Notification(eEmailNotification);
+        }
+
+        public void Send(object credentialId, EmailNotification emailNotification)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        #region Send
+        public EmailNotification Send(int createdBy,EmailNotification emailNotification, string Password)
+        {
+
+            Create(createdBy, emailNotification);
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Credentials = new System.Net.NetworkCredential(emailNotification.Sender, Password);
+            smtpClient.Send(from: emailNotification.Sender, CC: emailNotification.CC, recipients: emailNotification.Receiver, subject: emailNotification.Subject, body: emailNotification.Body);
+
+            return emailNotification;
         }
         #endregion
 

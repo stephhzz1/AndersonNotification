@@ -8,7 +8,7 @@
     @Html.Partial("_PartialCSS")
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-default">
         <a class="navbar-brand" href="~/Home">
             <i class="fa fa-home" aria-hidden="true"></i>
             Home
@@ -32,7 +32,7 @@
 
                         <li>
                             <a class="nav-link" href="~/EmailNotification/Create">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i class="fa fa-send-o" aria-hidden="true"></i>
                                 Send Email
                             </a>
                         </li>
@@ -64,6 +64,7 @@
             </ul>
 
         </div>
+
     </nav>
     <div id="MainContainer" class="body-content" ng-app="App">
         @Html.Partial("_PartialScript")
@@ -72,3 +73,22 @@
     </div>
 </body>
 </html>
+
+<style>
+.footer {
+        position: fixed;
+        left: 0;
+        padding-top: 20px; 
+        padding-bottom: 20px;
+        bottom: 0;
+        width: 100%;
+        color: black;
+        text-align: center;
+        background-color: lightgray;
+}
+
+</style>
+
+<div class="footer">
+    &copy; 2018. - Anderson Group BPO Inc. | <a href="#">Anderson.Notification</a> - Private and Confidential.
+</div>
