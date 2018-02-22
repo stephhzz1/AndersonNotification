@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Net.Mail;
+using System.Net;
 
 namespace AndersonNotificationFunction
 {
@@ -42,11 +43,21 @@ namespace AndersonNotificationFunction
         #region Send
         public EmailNotification Send(int createdBy,EmailNotification emailNotification, string Password)
         {
-
+     
             Create(createdBy, emailNotification);
-            SmtpClient smtpClient = new SmtpClient();
-            smtpClient.Credentials = new System.Net.NetworkCredential(emailNotification.Sender, Password);
-            smtpClient.Send(from: emailNotification.Sender, recipients: emailNotification.Receiver, subject: emailNotification.Subject, body: emailNotification.Body);
+            MailMessage email = new MailMessage();
+            email.To.Add(emailNotification.Receiver);
+            email.From = new MailAddress(emailNotification.Sender);
+            email.Subject = emailNotification.Subject;
+            string Body = emailNotification.Body;
+            email.Body = emailNotification.Body;
+            email.CC.Add(emailNotification.CC);
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Credentials = new System.Net.NetworkCredential(emailNotification.Sender, Password);
+            smtp.EnableSsl = true;
+            smtp.Send(email);
 
             return emailNotification;
         }
@@ -97,6 +108,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = emailnotification.NotificationId,
                 Sender = emailnotification.Sender,
+                CC = emailnotification.CC,
                 Receiver = emailnotification.Receiver,
                 Subject = emailnotification.Subject,
                 Body = emailnotification.Body,
@@ -112,7 +124,7 @@ namespace AndersonNotificationFunction
 
                 CreatedBy = eemailnotification.CreatedBy,
                 UpdatedBy = eemailnotification.UpdatedBy,
-
+                CC = eemailnotification.CC,
                 NotificationId = eemailnotification.NotificationId,
                 Sender = eemailnotification.Sender,
                 Receiver = eemailnotification.Receiver,
@@ -132,6 +144,7 @@ namespace AndersonNotificationFunction
 
                 NotificationId = a.NotificationId,
                 Sender = a.Sender,
+                CC = a.CC,
                 Receiver = a.Receiver,
                 Subject = a.Subject,
                 Body = a.Body,
