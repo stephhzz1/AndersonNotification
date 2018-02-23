@@ -10,7 +10,7 @@ namespace AndersonNotificationFunction
         #endregion
 
         #region Send
-        EmailNotification Send(int createdBy, EmailNotification emailnotification);
+        EmailNotification Send(int createdBy, EmailNotification emailnotification, string Password);
         #endregion
 
         #region Read
@@ -25,7 +25,7 @@ namespace AndersonNotificationFunction
         #region Delete
         void Delete(int notificationId);
         #endregion
-
+        
         #region Other Function
 
         #endregion

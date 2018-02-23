@@ -24,7 +24,7 @@ namespace AndersonNotificationWeb.Controllers
         public ActionResult Create(EmailNotification notification, string Sender, string Password)
         {
             FEmailNotification fe = new FEmailNotification();
-            fe.Send(CredentialId,notification);
+            fe.Send(CredentialId,notification, Password);
             
             try
             {
