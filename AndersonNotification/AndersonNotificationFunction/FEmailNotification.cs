@@ -13,7 +13,7 @@ namespace AndersonNotificationFunction
     {
         private IDEmailNotification _iDEmailNotification;
 
-        public FEmailNotification(IDEmailNotification iDNotifications)
+        public FEmailNotification(IDEmailNotification iDNotifications) 
         {
             _iDEmailNotification = iDNotifications;
         }
@@ -25,12 +25,12 @@ namespace AndersonNotificationFunction
         }
         #region Create
         public EmailNotification Create(int createdBy, EmailNotification emailNotification)
-        {
+        {   
             var eEmailNotification = EEmailNotification(emailNotification);
             eEmailNotification.CreatedDate = DateTime.Now;
             eEmailNotification.CreatedBy = createdBy;
             eEmailNotification = _iDEmailNotification.Insert(eEmailNotification);
-
+           
             return Notification(eEmailNotification);
         }
 
@@ -41,9 +41,10 @@ namespace AndersonNotificationFunction
         #endregion
 
         #region Send
-        public EmailNotification Send(int createdBy, EmailNotification emailNotification, string Password)
-        {
+        public EmailNotification Send(int createdBy,EmailNotification emailNotification, string Password)
 
+        {
+     
             Create(createdBy, emailNotification);
             MailMessage email = new MailMessage();
             email.To.Add(emailNotification.Receiver);
@@ -59,7 +60,7 @@ namespace AndersonNotificationFunction
             smtp.EnableSsl = true;
             smtp.Send(email);
 
-            return emailNotification;
+     return emailNotification;
         }
         #endregion
 
@@ -107,7 +108,7 @@ namespace AndersonNotificationFunction
                 UpdatedBy = emailnotification.UpdatedBy,
 
                 NotificationId = emailnotification.NotificationId,
-                Sender = emailnotification.Sender,
+  Sender = emailnotification.Sender,
                 CC = emailnotification.CC,
                 Receiver = emailnotification.Receiver,
                 Subject = emailnotification.Subject,
@@ -127,6 +128,7 @@ namespace AndersonNotificationFunction
                 CC = eemailnotification.CC,
                 NotificationId = eemailnotification.NotificationId,
                 Sender = eemailnotification.Sender,
+                CC = eemailnotification.CC,
                 Receiver = eemailnotification.Receiver,
                 Subject = eemailnotification.Subject,
                 Body = eemailnotification.Body,
