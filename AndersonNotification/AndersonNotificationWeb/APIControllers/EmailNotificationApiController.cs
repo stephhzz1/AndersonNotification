@@ -10,9 +10,7 @@ namespace AndersonNotificationWeb.ApiControllers
     {
         private IFEmailNotification _iFEmailNotification;
         private IDEmailNotification _iDEmailNotification;
-
-        public object CredentialId { get; private set; }
-
+        
         public EmailNotificationApiController()
         {
             _iDEmailNotification  = new DEmailNotification();
@@ -20,17 +18,13 @@ namespace AndersonNotificationWeb.ApiControllers
         }
 
         [HttpPost]
-        public IHttpActionResult Get(EmailNotification emailNotification)
+        public IHttpActionResult Get(EmailNotification emailNotification, string Password)
         {
             FEmailNotification fe = new FEmailNotification();
-            fe.Send(CredentialId, emailNotification);
+            fe.Send(CredentialId, emailNotification, Password);
 
             return Ok(emailNotification);
         }
-
-        private IHttpActionResult Ok(EmailNotification emailNotification)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
