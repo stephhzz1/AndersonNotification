@@ -7,6 +7,7 @@ namespace AndersonNotificationContext
     {
         public Context() : base("AndersonNotification")
         {
+
             if (Database.Exists())
             {
                 Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Migrations.Configuration>());

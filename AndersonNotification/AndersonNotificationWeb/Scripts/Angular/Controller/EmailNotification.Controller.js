@@ -16,7 +16,7 @@
         vm.Initialise = Initialise;
 
         function GoToUpdatePage(emailNotificationId) {
-            $window.location.href = '../EmailNotification/Index/' + emailNotificationId;
+            $window.location.href = '../EmailNotification/Update/' + emailNotificationId;
         }
 
         function Initialise() {
