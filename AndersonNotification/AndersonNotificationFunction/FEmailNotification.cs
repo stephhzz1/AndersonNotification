@@ -43,7 +43,6 @@ namespace AndersonNotificationFunction
         #region Send
         public EmailNotification Send(int createdBy,EmailNotification emailNotification, string Password)
         {
-     
             Create(createdBy, emailNotification);
             MailMessage email = new MailMessage();
             email.To.Add(emailNotification.Receiver);

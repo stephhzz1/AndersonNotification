@@ -20,7 +20,6 @@ namespace AndersonNotificationContext
                     Body = "notification@testing.com",
                 });
             context.SaveChanges();
-
         }
     }
 }

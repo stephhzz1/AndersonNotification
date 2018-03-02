@@ -3818,7 +3818,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 5px 5px;
 }
 
 .nav > li > a:hover,
@@ -3843,7 +3843,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #428bca;
+  /*border-color: #428bca;*/
 }
 
 .nav .nav-divider {
@@ -4083,7 +4083,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-collapse {
-  max-height: 340px;
+  max-height: 120px;
   padding-right: 15px;
   padding-left: 15px;
   overflow-x: visible;
